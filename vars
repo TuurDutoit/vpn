@@ -1,8 +1,0 @@
-export BIND_IP=''
-export PUBLIC_INT='eth0'
-export PUBLIC_IP='10.18.0.7'
-export PRIVATE_INT='tun0'
-export SERVER_IP='10.8.0.6'
-
-# More vars are stored in separate files:
-#  - vpn.sh: 
