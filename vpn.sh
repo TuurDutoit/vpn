@@ -14,7 +14,7 @@ if [ "$USER" != "root" ]; then
         exit
 fi
 
-source ./assets/vars
+source ./assets/vars.sh
 ./scripts/install.sh
 ./scripts/pki.sh
 ./scripts/iptables.conf
