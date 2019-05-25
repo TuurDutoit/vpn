@@ -1,7 +1,12 @@
 #!/bin/bash
 
-# Required on Ubuntu 18.04
-sudo ln -s openssl-1.0.0.cnf /usr/share/easy-rsa/openssl.cnf
+# For some reason, `whichopensslcnf` doesn't find the openssl.cnf file (at least on Ubuntu 18.04)
+# A few versioned ones are included though (format: openssl-${version}.cnf), so we symlink one of those
+if [ ! -f /usr/share/easy-rsa/openssl.cnf ]; then
+    OPENSSL_CNF=$(ls /usr/share/easy-rsa | grep 'openssl-.*.cnf' | sort -r | head -n 1)
+    sudo ln -s "$OPENSSL_CNF" /usr/share/easy-rsa/openssl.cnf
+fi
+
 sudo cp -R /usr/share/easy-rsa /etc/openvpn/.
 
 # Rather than execute the vars dir, lets just define them here:

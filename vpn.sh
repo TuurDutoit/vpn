@@ -1,5 +1,5 @@
 #!/bin/bash
-if ! [ -n "$BASH_VERSION" ];then
+if ! [ -n "$BASH_VERSION" ]; then
     echo "This is not bash, calling self with bash....";
     SCRIPT=$(readlink -f "$0")
     /bin/bash $SCRIPT
@@ -20,3 +20,4 @@ source ./assets/vars
 ./scripts/iptables.conf
 ./scripts/conf.server.sh
 ./scripts/conf.client.sh
+./scripts/service.sh
