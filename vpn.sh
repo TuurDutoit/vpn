@@ -15,8 +15,8 @@ if [ "$USER" != "root" ]; then
 fi
 
 source ./assets/vars
-./install.sh
-./pki.sh
-./iptables.conf
-./conf.server.sh
-./conf.client.sh
+./scripts/install.sh
+./scripts/pki.sh
+./scripts/iptables.conf
+./scripts/conf.server.sh
+./scripts/conf.client.sh
