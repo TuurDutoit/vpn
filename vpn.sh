@@ -14,10 +14,12 @@ if [ "$USER" != "root" ]; then
         exit
 fi
 
+mkdir clients
+
 source ./assets/vars.sh
 ./scripts/install.sh
 ./scripts/pki.sh
-./scripts/iptables.conf
+./scripts/iptables.sh
 ./scripts/conf.server.sh
 ./scripts/conf.client.sh
 ./scripts/service.sh

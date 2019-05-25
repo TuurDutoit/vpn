@@ -56,6 +56,8 @@ export PKCS11_PIN=1234
 # generate Deffie Hellman Parameters
 . /etc/openvpn/easy-rsa/build-dh
 
+OLD_PWD=$(pwd)
+
 # Move the keys we just generated to the directory that actually runs the openvpn service
 cd /etc/openvpn/easy-rsa/keys
 cp ca.crt ca.key "$CLIENT_NAME.key" "$CLIENT_NAME.crt" "dh$KEY_SIZE.pem" server.crt server.key /etc/openvpn
@@ -63,3 +65,5 @@ cp ca.crt ca.key "$CLIENT_NAME.key" "$CLIENT_NAME.crt" "dh$KEY_SIZE.pem" server.
 # Generate a key for tls-auth
 cd /etc/openvpn
 openvpn --genkey --secret ta.key
+
+cd "$OLD_PWD"
