@@ -10,3 +10,7 @@ export REMOTE_PUBLIC_INT='eth0'        # The NIC for the public (tunneled) IP
 export REMOTE_PRIVATE_IP='172.16.0.1'  # The IP of the remote end of the VPN tunnel
 export LOCAL_PRIVATE_IP='172.16.0.2'   # The IP of the local end of the VPN tunnel. Must be adjacent to REMOTE counterpart
 export CLIENT_NAME='client1'           # Mainly used for filenames
+export KEY_SIZE='2048'                 # Size of the DH params
+export OPENVPN_VERB=3                  # Default verbosity of OpenVPN logs. Usually 3, or 6 for debugging
+export OPENVPN_SERVER_VERB="$OPENVPN_VERB" # Verbosity for server
+export OPENVPN_CLIENT_VERB="$OPENVPN_VERB" # Verbosity for client
