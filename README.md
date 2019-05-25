@@ -12,7 +12,7 @@ Follow the steps below to set up your VPN server and client. The scripts have to
 1. Clone this repo on the server where you want to install the OpenVPN server:
 
 ```bash
-$ git clone git@github.com:TuurDutoit/vpn.git && cd vpn
+$ git clone https://github.com/TuurDutoit/vpn.git && cd vpn
 ```
 
 2. Fill in all the variables in `assets/vars.sh`
