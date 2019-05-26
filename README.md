@@ -23,3 +23,23 @@ $ sudo ./vpn.sh
 ```
 
 4. OpenVPN is installed, the server configuration files and certificates, as well as a client configuration file, are placed in `/etc/openvpn`, a few NAT rules are added to iptables and IPv4 packet forwarding is enabled.
+
+### Client
+1. Install OpenVPN (as `root` or with `sudo`):
+
+```bash
+$ apt install openvpn
+```
+
+2. Upload the client config (the `.ovpn` file placed in the `clients` folder during the server setup) to the client server
+
+3. Start OpenVPN (as `root` or with `sudo`):
+
+```bash
+$ openvpn --config client1.ovpn
+```
+
+Note that the default gateway of the client will be overriden, which might cut off your SSH connection. You can however connect to the public IP on the remote server, which will tunnel your SSH traffic to the client.  
+You can do this with a service file if you want it to run constantly.
+
+### pfSense
