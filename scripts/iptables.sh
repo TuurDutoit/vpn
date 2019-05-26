@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Enable IPv4 packet forwarding
-sed -i 's;net.ipv4.ip_forward = 0;net.ipv4.ip_forward = 1;' /etc/sysctl.conf
+sed -i -E 's;#?\s*net\.ipv4\.ip_forward\s*=\s*[01];net.ipv4.ip_forward = 1;' /etc/sysctl.conf
 sysctl -p /etc/sysctl.conf
 
 # Insert NAT rules into iptables via rc.local (executed when the server boots)
